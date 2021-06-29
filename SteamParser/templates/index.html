@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'SteamParser/style.css' %}"></link>
+</head>
+
+<body>
+    <header>
+        <ul class='mainmenu'>
+            <li><a href="#">Привет, {{ user.get_username }}</a></li>
+            <li><a href="{% url 'logout' %}">Выйти</a></li>
+        </ul>
+    </header>
+    <main>
+        <ul class="content">
+        </ul>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+<script>
+    var append_increment = 0;
+    setInterval(function() {
+        $.ajax({
+            type: "GET",
+            url: "{% url 'get_new_items' %}",  // URL to your view that serves new info
+            data: {'append_increment': append_increment}
+        })
+        .done(function(response) {
+            $('.content').prepend(response);
+            append_increment += 10;
+        });
+    }, 10000)
+</script>
+</html>

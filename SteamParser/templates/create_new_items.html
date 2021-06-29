@@ -1,0 +1,58 @@
+{% load static %}
+{% for item in items %}
+<li>
+    <img src="{{ item.img }}">
+    <div class="float-main">
+        <div class="text">
+            <p class="name">{{ item.name }}</p>
+            <p class="float-text">Float : {{ item.float }}</p>
+        </div>
+
+        <div class="float">
+            <div class="FN"></div>
+            <div class="MW"></div>
+            <div class="FT"></div>
+            <div class="WW"></div>
+            <div class="BS"></div>
+            <svg width="20" height="21" viewBox="0 0 20 21" class="arrow" style="left: {{ item.float_forward }}%;">
+                <path
+                    d="M4.5 7.115V2a2 2 0 012-2h7a2 2 0 012 2v5.115a2 2 0 01-.655 1.48L10 13 5.155 8.595a2 2 0 01-.655-1.48z">
+                </path>
+                <defs>
+                    <filter id="float-arrow_svg__filter0_d" x="0.5" y="0" width="19" height="21"
+                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                        <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0">
+                        </feColorMatrix>
+                        <feOffset dy="4"></feOffset>
+                        <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+                        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"></feColorMatrix>
+                        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+                        <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+    <div class="stickers">
+        {% for sticker in item.stickers %}
+        <div class="sticker">
+            <img src="{{ sticker.url }}" alt="{{ sticker.name }}">
+            <p>{{ sticker.wear }}%</p>
+            <p>${{ sticker.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+        <ul class="buy">
+            <li>
+                <p>Listing: ${{ item.price }}</p>
+            </li>
+            <li><p>Default: ${{ item.default }}</p></li>
+            <li>
+                <a href="{{ item.url }}">buy now</a>
+            </li>
+        </ul>
+        
+    </div>
+</li>
+{% endfor %}

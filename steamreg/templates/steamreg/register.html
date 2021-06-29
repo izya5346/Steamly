@@ -1,0 +1,24 @@
+<head>
+    <title>Регистрация</title>
+    {% load static %}
+    <link rel="stylesheet" href = "{% static 'font/font-faces.css' %}"></link>
+    <link rel="stylesheet" href = "{% static 'steamreg/style.css' %}"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="form-page">
+        <div class="container-form">
+            <span class="container-form-head">Регистрация</span>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="form-field">{{ form.username }}<span class="form-field-error">{{ form.username.errors }}</span></div>
+                <div class="form-field">{{ form.email }}<span class="form-field-error">{{ form.email.errors }}</span></div>
+                <div class="form-field">{{ form.password1 }}<span class="form-field-error">{{ form.password1.errors }}</span></div>
+                <div class="form-field">{{ form.password2 }}<span class="form-field-error">{{ form.password2.errors }}</span></div>
+                <button type="submit" class="form-btn">Зарегистрироваться</button>
+            </form>
+            
+            <div class="redirect-form-page">Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></div>
+        </div>
+    </div>
+</body>
