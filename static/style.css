@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin:0;
+    color:#39615D;
+}
+body{
+    font-family: 'HelveticaNeueCyr';
+    font-style:normal;
+    font-weight: 400;
+    margin:0;
+    font-size:12px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.sign-block{
+    display: inline-block;
+}
+
+a:hover{
+    color:turquoise;
+}
+
+.email, .username, .password{
+    cursor:pointer;
+}
+.form-page{
+    font-size: 1.3em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+    width: 30em;
+}
+.container-form{
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    padding: 2.5em;
+}
+.container-form-head{
+    display: block;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 1em;
+}
+.form-field{
+    margin-bottom: 2em;
+}
+.form-field-error{
+    font-size: 0.9em;
+    color: red;
+}
+.form-field input{ 
+    width: 100%;
+    height: 2.5em;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid gray;
+}
+.form-field input:focus{
+    transition: 0.5s;
+    border-bottom: 2px solid rgb(0, 234, 255);
+}
+.form-btn{
+    display: block;
+    cursor:pointer;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 2.5em;
+    background-color: rgb(0, 234, 255);
+    outline: none;
+    border: 1px solid gray;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.form-btn:hover, .search-btn:hover{
+    transition: 0.2s;
+    background-color: rgb(10, 199, 216);
+}
+.redirect-form-page{
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
+}
+.redirect-form-page a{
+    font-size: 0.9em;
+    color: rgb(3, 69, 192);
+}
+.reset-passoword{
+    text-align: center;
+    margin-top: 5em;
+}
